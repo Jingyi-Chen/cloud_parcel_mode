@@ -1,12 +1,12 @@
 # Cloud Parcel Model
 
 ## Description
-This cloud parcel model simulates the updraft cooling of a cloud parcel with entrainment-mixing and entrained aerosols. The initial development of this model was supported by Stony Brook University and Brookhaven National Laboratory.
+This cloud parcel model simulates the updraft cooling of a cloud parcel with entrainment-mixing and entrained aerosols. The initial development of this model was supported by Stony Brook University and Brookhaven National Laboratory in 2014 (adiabatic version) and 2017 (entrainment-mixing with entrained aerosols). 
 
 ## Author
   Jingyi Chen, PhD
   
-  Research Scientist, Pacific Northwest National Laboratory (current affiliation)
+  Research Scientist, Pacific Northwest National Laboratory
   
   Email: jingyichen89@gmail.com
                 
