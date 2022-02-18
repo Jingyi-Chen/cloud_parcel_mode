@@ -1,4 +1,5 @@
 # Cloud Parcel Model
+<a href="https://zenodo.org/badge/latestdoi/460960645"><img src="https://zenodo.org/badge/460960645.svg" alt="DOI"></a>
 
 ## Description
 This cloud parcel model simulates the updraft cooling of a cloud parcel with entrainment-mixing and entrained aerosols in Fortran 95. The initial development of this model was supported by Stony Brook University and Brookhaven National Laboratory in 2014 (adiabatic version) and 2017 (entrainment-mixing with entrained aerosols). The adiabatic version was developed by comparing with two other similar models by Graham Feingold/Huiwen Xue and Yiran Peng, respectively. The author would thank them for the kind sharing. 
