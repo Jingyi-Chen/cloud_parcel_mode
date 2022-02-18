@@ -4,13 +4,9 @@
 This cloud parcel model simulates the updraft cooling of a cloud parcel with entrainment-mixing and entrained aerosols. The initial development of this model was supported by Stony Brook University and Brookhaven National Laboratory.
 
 ## Author
-Jingyi Chen, PhD
-
-Research Scientist
-
-Pacific Northwest National Laboratory (current affiliation)
-
-Email: jingyichen89@gmail.com or jingyi.chen@pnnl.gov
+  Jingyi Chen, PhD
+  Research Scientist, Pacific Northwest National Laboratory (current affiliation)
+  Email: jingyichen89@gmail.com
                 
 ## Terms of Use
 1. The parcel model code may be used for educational or non-profit purposes only. Any other usage must be first approved by the author.
@@ -26,7 +22,7 @@ Email: jingyichen89@gmail.com or jingyi.chen@pnnl.gov
 
 
 ## Code Structure
-**maincpm.f90: 
+**maincpm.f90: **
 - temporary wrapper
 - call chem to set the aerosol chemistry properties
 - call aerospec to set aerosol size distribution
@@ -36,7 +32,7 @@ Email: jingyichen89@gmail.com or jingyi.chen@pnnl.gov
 - call cpm to calculate the deliquesce/efflorescence and condensation/evaporation
 
 
-**cpm.f90: 
+**cpm.f90: **
 - the most primary code to calculate the deliquesce/efflorescence and condensation/evaporation
 - call ODE solver to solve the equations in cond.f90
 - units are g/cm/s
@@ -48,8 +44,8 @@ Email: jingyichen89@gmail.com or jingyi.chen@pnnl.gov
      r_c:  critical radius defined in Reutter et al., 2009
      r_ki: Kohler critical radius for each bin
 
-**cond.f90:
+**cond.f90: **
 - time tendency equations
 
-**DVODE_F90_M.f90
+**DVODE_F90_M.f90 **
 - ODE solver
