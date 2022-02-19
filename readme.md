@@ -2,7 +2,7 @@
 <a href="https://zenodo.org/badge/latestdoi/460960645"><img src="https://zenodo.org/badge/460960645.svg" alt="DOI"></a>
 
 ## Description
-This cloud parcel model simulates the updraft cooling of a cloud parcel with entrainment-mixing and entrained aerosols in Fortran 95. The initial development of this model was supported by the U.S. Department of Energy’s Earth System Modeling program via the Fast-physics System Testbed and Research project and Atmospheric System Research program through Stony Brook University and Brookhaven National Laboratory. The adiabatic version was developed by comparing with two other similar models by Graham Feingold/Huiwen Xue and Yiran Peng in 2014, respectively. The author would thank them for the kind sharing. The entrainment-mixing version was developed between 2015-2017.
+This cloud parcel model simulates the updraft cooling of a cloud parcel with entrainment-mixing and entrained aerosols in Fortran 95. The initial development of this model was supported by the U.S. Department of Energy’s Earth System Modeling program via the Fast-physics System Testbed and Research project and Atmospheric System Research program through Stony Brook University and Brookhaven National Laboratory. The adiabatic version was developed by comparing with two other similar models by Graham Feingold/Huiwen Xue and Yiran Peng in 2014. The author would thank them for the kind sharing. The entrainment-mixing version was developed between 2015-2017.
 
 ## Author
   Jingyi Chen, PhD
