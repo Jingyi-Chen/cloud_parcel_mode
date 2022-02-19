@@ -29,7 +29,7 @@ This cloud parcel model simulates the updraft cooling of a cloud parcel with ent
 - temporary wrapper
 - call chem to set the aerosol chemistry properties
 - call aerospec to set aerosol size distribution
-- call vertvelo to set the vertical velocity (default 0)
+- call vertvelo to set the vertical velocity
 - call entrain to set the entrianment mixing properties (defaul entrainment rate is 0)
 - call dropspec to set the droplet size distribution
 - call cpm to calculate the deliquesce/efflorescence and condensation/evaporation
@@ -51,4 +51,7 @@ This cloud parcel model simulates the updraft cooling of a cloud parcel with ent
 - time tendency equations
 
 **DVODE_F90_M.f90**
-- ODE solver
+- VODE(variable-coefficient ODE solver) is a general purpose solver written by P.N. Brown, G.D. Byrne and A.C. Hindmarsh from Lawrence Livermore National Laboratory ODEPACK suite. 
+- version updated on Aug. 2013
+- P. N. Brown, G. D. Byrne, and A. C. Hindmarsh, "VODE, A Variable- Coefficient ODE Solver," SIAM J. Sci. Stat. Comput., 10 (1989), pp. 1038-1051
+
