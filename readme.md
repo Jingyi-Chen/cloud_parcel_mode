@@ -16,7 +16,7 @@ This cloud parcel model simulates the updraft cooling of a cloud parcel with ent
 2. The code cannot be modified in any way or form or distributed without the author's prior consent.
 3. No portion of the source code can be used in other codes without the author's prior consent.
 4. The code is provided on an as-is basis, and the author bears no liability from its usage.
-5. Publications resulting from the usage of the code must cite the references below, as appropriate, for proper acknowledgment.
+5. Publications resulting from the usage of the code must cite at least one of the references below, as appropriate, for proper acknowledgment.
          
 ## References
 1. Chen, J., Y. Liu, M. Zhang, and Y. Peng (2016), New understanding and quantification of the regime dependence of aerosol-cloud interaction for studying aerosol indirect effects, Geophysical Research Letter, 43, 1780–1787, doi:10.1002/2016GL067683.
