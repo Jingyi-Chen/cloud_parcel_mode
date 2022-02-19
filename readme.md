@@ -2,7 +2,7 @@
 <a href="https://zenodo.org/badge/latestdoi/460960645"><img src="https://zenodo.org/badge/460960645.svg" alt="DOI"></a>
 
 ## Description
-This cloud parcel model simulates the updraft cooling of a cloud parcel with entrainment-mixing and entrained aerosols in Fortran 95. The initial development of this model was supported by Stony Brook University and Brookhaven National Laboratory in 2014 (adiabatic version) and 2017 (entrainment-mixing with entrained aerosols). The adiabatic version was developed by comparing with two other similar models by Graham Feingold/Huiwen Xue and Yiran Peng, respectively. The author would thank them for the kind sharing. 
+This cloud parcel model simulates the updraft cooling of a cloud parcel with entrainment-mixing and entrained aerosols in Fortran 95. The initial development of this model was supported by the U.S. Department of Energy’s Earth System Modeling program via the Fast-physics System Testbed and Research project and Atmospheric System Research program through Stony Brook University and Brookhaven National Laboratory. The adiabatic version was developed by comparing with two other similar models by Graham Feingold/Huiwen Xue and Yiran Peng in 2014, respectively. The author would thank them for the kind sharing. The entrainment-mixing version was developed between 2015-2017.
 
 ## Author
   Jingyi Chen, PhD
@@ -25,7 +25,7 @@ This cloud parcel model simulates the updraft cooling of a cloud parcel with ent
 
 
 ## Code Structure
-**maincpm.f90:**
+**maincpm.f90**
 - temporary wrapper
 - call chem to set the aerosol chemistry properties
 - call aerospec to set aerosol size distribution
@@ -35,7 +35,7 @@ This cloud parcel model simulates the updraft cooling of a cloud parcel with ent
 - call cpm to calculate the deliquesce/efflorescence and condensation/evaporation
 
 
-**cpm.f90:**
+**cpm.f90**
 - the most primary code to calculate the deliquesce/efflorescence and condensation/evaporation
 - call ODE solver to solve the equations in cond.f90
 - units are g/cm/s
@@ -47,7 +47,7 @@ This cloud parcel model simulates the updraft cooling of a cloud parcel with ent
      r_c:  critical radius defined in Reutter et al., 2009
      r_ki: Kohler critical radius for each bin
 
-**cond.f90:**
+**cond.f90**
 - time tendency equations
 
 **DVODE_F90_M.f90**
