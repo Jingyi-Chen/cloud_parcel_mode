@@ -20,7 +20,7 @@ CONTAINS
 
 SUBROUTINE cpm(dt_les,dt_cpm,temp0,press0,sat0,na0,vv,entrrt,drop_radmin,drop_radmax,&
             & rhos,rhosap,soluba,solubb,solubc,Ms,kap,rhois,solfracm,solfracv,&
-            & aerostate,conc0,prad0,pmass0,prad,pmass,ioi) 
+            & aerostate,conc0,prad0,pmass0,prad,pmass,ioi,io_dsd) 
 
       ! passing from main
       integer :: aerobin
@@ -31,10 +31,10 @@ SUBROUTINE cpm(dt_les,dt_cpm,temp0,press0,sat0,na0,vv,entrrt,drop_radmin,drop_ra
       integer, dimension(aerobin), intent(inout) :: aerostate
       real(RLK), dimension(aerobin),intent(in) :: pmass0,prad0
       real(RLK), dimension(aerobin),intent(inout) :: pmass,prad,conc0
-      integer, intent(in) :: ioi
+      integer, intent(in) :: ioi,io_dsd
 
       ! other declarations
-      integer   :: instabind,wetbin,ii,i0bin,cpmv_unit
+      integer   :: instabind,wetbin,ii,i0bin,cpmv_unit,cpmr_unit
       integer   :: totstep,step 
       real(RLK) :: temp,press,sat,height,na,nam
       real(RLK) :: svpress,vpress,vmr,lmr,totalwmr,rhod0,rhod,rhoa0,rhoa
@@ -47,7 +47,7 @@ SUBROUTINE cpm(dt_les,dt_cpm,temp0,press0,sat0,na0,vv,entrrt,drop_radmin,drop_ra
       integer, dimension(neye):: acbin
       real(RLK), dimension(neye) :: cdconc,cdrmean,cdrsd,cddisp,lwc,rv,re,skew,kurt
       real(RLK), dimension(neye) :: cdbeta,rrainLN,ThrsFuncLN
-      CHARACTER(len=20) :: cpmv_fn
+      CHARACTER(len=20) :: cpmv_fn, cpmr_fn
 
       ! for numerical solver use
       integer :: NEQ 
@@ -62,6 +62,11 @@ SUBROUTINE cpm(dt_les,dt_cpm,temp0,press0,sat0,na0,vv,entrrt,drop_radmin,drop_ra
          cpmv_unit=21
          cpmv_fn='cpmv.txt'
          open(unit=cpmv_unit,file=cpmv_fn)
+         if (io_dsd.eq.1) then
+             cpmr_unit=31
+             cpmr_fn='cpmr.txt'
+             open(unit=cpmr_unit,file=cpmr_fn)
+         endif
       endif 
 
       totstep = dt_les/dt_cpm
@@ -247,9 +252,17 @@ SUBROUTINE cpm(dt_les,dt_cpm,temp0,press0,sat0,na0,vv,entrrt,drop_radmin,drop_ra
 
 
                   if (ioi.eq.1) then
+                  
                       write(cpmv_unit,'(I13.3,20E17.7E3,2I13.3)') step,TIME,height,temp,press,rhoa,&
                            &sat,vv,na,nam,entrrt,vmr,lmr,totalwmr,lwc(2),cdconc(2),cdrmean(2),lwc(3),cdconc(3),&
                            &cdrmean(3),dt,wetbin,aerobin
+                           
+                      if (io_dsd.eq.1) then
+                          write(cpmr_unit,'(I13.3,2001E15.7E3)') step,(prad(ii),ii=1,aerobin,1)
+                          write(cpmr_unit,'(I13.3,2001E15.7E3)') step,(concv(ii),ii=1,aerobin,1)
+                          write(cpmr_unit,'(I13.3,2001I13.3)') step,(aerostate(ii),ii=1,aerobin,1)
+                      endif
+                      
                   endif
 
                   height = height + dt*vv
@@ -267,6 +280,9 @@ SUBROUTINE cpm(dt_les,dt_cpm,temp0,press0,sat0,na0,vv,entrrt,drop_radmin,drop_ra
 
       if (ioi.eq.1) then
          close(cpmv_unit)
+         if (io_dsd.eq.1) then
+             close(cpmr_unit)
+         endif
       endif
 
       if (instabind==1) then

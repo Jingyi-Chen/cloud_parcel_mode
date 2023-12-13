@@ -17,7 +17,7 @@ PROGRAM main
     implicit none
 
     integer :: aerobin = 20
-    integer :: iaero,ivv,ientr,ichem,ipredrop,ioi
+    integer :: iaero,ivv,ientr,ichem,ipredrop,ioi,io_dsd
     real(RLK) :: dt_les, dt_cpm
     real(RLK) :: sat_read,temp_read,press_read,temp0,press0,sat0,vv
     real(RLK) :: drop_radmin_read,drop_radmax_read,drop_radmin,drop_radmax
@@ -93,9 +93,10 @@ PROGRAM main
 
     ! call the cpm subroutine
     ioi = 1
+    io_dsd = 1
     CALL cpm(dt_les,dt_cpm,temp0,press0,sat0,na0,vv,entrrt,drop_radmin,drop_radmax,&
             & rhos,rhosap,soluba,solubb,solubc,Ms,kap,rhois,solfracm,solfracv,&
-            & aerostate,conc0,prad0,pmass0,prad,pmass,ioi) 
+            & aerostate,conc0,prad0,pmass0,prad,pmass,ioi,io_dsd) 
 
     print *, 'after cpm'
     print *, 'prad (micro)', prad*1.0e4
