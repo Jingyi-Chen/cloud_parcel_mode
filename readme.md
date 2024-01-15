@@ -9,7 +9,7 @@ This cloud parcel model simulates the updraft cooling of a cloud parcel with ent
   
   Research Scientist, Pacific Northwest National Laboratory
   
-  Email: jingyichen89@gmail.com
+  Email: jingyi.jenna.chen@outlook.com
                 
 ## Terms of Use
 1. The parcel model code may be used for educational or non-profit purposes only. Any other usage must be first approved by the author.
